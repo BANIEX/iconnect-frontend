@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <div>
-        <GoogleOAuthProvider clientId="940625139630-hjt31o13stambo2tgup5ho8vknu51v52.apps.googleusercontent.com">
+        <GoogleOAuthProvider clientId="">
           <GoogleLogin
             onSuccess={(credentialResponse) => {
               const decoded = jwt_decode(credentialResponse.credential);

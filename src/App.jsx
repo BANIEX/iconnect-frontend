@@ -5,10 +5,14 @@ import axios from "axios";
 import "./App.css";
 
 function App() {
+
+  const clientId =
+    "";
+
   return (
     <>
       <div>
-        <GoogleOAuthProvider clientId="">
+        <GoogleOAuthProvider clientId={clientId}>
           <GoogleLogin
             onSuccess={(credentialResponse) => {
               const decoded = jwt_decode(credentialResponse.credential);

@@ -3,6 +3,7 @@ import jwt_decode from "jwt-decode";
 import axios from "axios";
 
 import "./App.css";
+import ImageUpload from "./components/ImageUpload/ImageUpload";
 
 function App() {
 
@@ -29,7 +30,8 @@ function App() {
             }}
           />
         </GoogleOAuthProvider>
-        ;
+        <ImageUpload/>
+        
       </div>
     </>
   );

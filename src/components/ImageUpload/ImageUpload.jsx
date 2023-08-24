@@ -31,9 +31,8 @@ function ImageUpload() {
     try {
       const response = await api.post("/upload-image", imageFormData, {
         headers: {
-          "Content-Type": "multipart/form-data", // Set the content type for file upload
-        },
-      });
+          "Content-Type": "multipart/form-data", 
+      }});  
       // const imageUrl = response.data.imageUrl;
       // console.log(imageUrl);
 
@@ -54,7 +53,7 @@ function ImageUpload() {
   };
 
   return (
-    <form onSubmit={handleSubmit} encType="multipart/form-data">
+    <form onSubmit={handleSubmit} >
       <input
         type="text"
         name="name"

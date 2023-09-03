@@ -29,22 +29,24 @@ function ImageUpload() {
     imageFormData.append("image", selectedImage);
 
     try {
-      const response = await api.post("/upload-image", imageFormData, {
+      const uploadImageResponse = await api.post("/upload-image", imageFormData, {
         headers: {
           "Content-Type": "multipart/form-data", 
       }});  
-      // const imageUrl = response.data.imageUrl;
-      // console.log(imageUrl);
-
-      // const response = await api.get("/");
-      console.log(response)
+      const imageUrl = uploadImageResponse.data.imageUrl;
+      console.log(imageUrl);
+      console.log(uploadImageResponse)
       
 
       // Combine the text input data and image URL
-      // const completeFormData = { ...formData, imageUrl };
+      const completeFormData = { ...formData, imageUrl };
 
       // Send the complete form data to the backend
-      // await api.post("/submit-form", completeFormData);
+      const formSubmitResponse = await api.post("/submit-form", completeFormData);
+      // if(formSubmitResponse){
+        
+      // }
+      console.log(formSubmitResponse)
 
       console.log("Form submitted successfully");
     } catch (error) {

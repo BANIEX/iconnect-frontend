@@ -4,6 +4,7 @@ import axios from "axios";
 
 import "./App.css";
 import ImageUpload from "./components/ImageUpload/ImageUpload";
+import Twitter from "./components/Twitter/Twitter";
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
           />
         </GoogleOAuthProvider>
         <ImageUpload/>
+        <Twitter/>
         
       </div>
     </>

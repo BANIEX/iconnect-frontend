@@ -14,20 +14,29 @@ const Twitter = () => {
     const oauthVerifierParam = 'bad boy z'
     console.log("hi")
 
-
-     if(oauthTokenParam && oauthVerifierParam){
+    const sendTokenAndVerifer = async () => {
 
       console.log("second")
         try {
-          api.post("/send-twitter-token-and-verifier",{
+          const sentTokenAndVerifer = await api.post("/send-twitter-token-and-verifier",{
             oauthTokenParam, oauthVerifierParam
 
           })
+
+          console.log(sentTokenAndVerifer);
           
         } catch (error) {
           console.log(error);
           
         }
+
+    }
+
+
+     if(oauthTokenParam && oauthVerifierParam){
+      sendTokenAndVerifer();
+
+      
 
      }
 

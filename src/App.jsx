@@ -1,20 +1,20 @@
-import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
-import jwt_decode from "jwt-decode";
-import axios from "axios";
+// import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
+// import jwt_decode from "jwt-decode";
+// import axios from "axios";
 
 import "./App.css";
-import ImageUpload from "./components/ImageUpload/ImageUpload";
+// import ImageUpload from "./components/ImageUpload/ImageUpload";
 import Twitter from "./components/Twitter/Twitter";
 
 function App() {
 
-  const clientId =
-    "";
+  // const clientId =
+  //   "";
 
   return (
     <>
       <div>
-        <GoogleOAuthProvider clientId={clientId}>
+        {/* <GoogleOAuthProvider clientId={clientId}>
           <GoogleLogin
             onSuccess={(credentialResponse) => {
               const decoded = jwt_decode(credentialResponse.credential);
@@ -30,8 +30,8 @@ function App() {
               console.log("Login Failed");
             }}
           />
-        </GoogleOAuthProvider>
-        <ImageUpload/>
+        </GoogleOAuthProvider> */}
+        {/* <ImageUpload/> */}
         <Twitter/>
         
       </div>

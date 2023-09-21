@@ -14,13 +14,18 @@ const Twitter = () => {
     // const oauthVerifierParam = 'bad boy z'
     // console.log("hi")
 
-    const sendTokenAndVerifer = async () => {
+    const sendTokenAndVerifier = async () => {
 
       // console.log("second")
         try {
-          const sentTokenAndVerifer = await api.post("/send-twitter-token-and-verifier", {oauthTokenParam, oauthVerifierParam})
+          const sentTokenAndVerifier = await api.post("/send-twitter-token-and-verifier", {oauthTokenParam, oauthVerifierParam})
 
-          console.log(sentTokenAndVerifer);
+          console.log(sentTokenAndVerifier);
+
+          if(sentTokenAndVerifier){
+            window.location.replace = "http://localhost:5173/";
+
+          }
           
         } catch (error) {
           console.log(error);
@@ -31,7 +36,7 @@ const Twitter = () => {
 
 
      if(oauthTokenParam && oauthVerifierParam){
-      sendTokenAndVerifer();
+      sendTokenAndVerifier();
      }
 
 
@@ -42,7 +47,6 @@ const Twitter = () => {
 
     const getRequestToken = await api.get("/get-twitter-request-token")
     console.log(getRequestToken);
-    console.log("je")
     if(getRequestToken){
       let oauth_token = getRequestToken.data.serverData.oauth_token;
       window.location.replace(`https://api.twitter.com/oauth/authorize?oauth_token=${oauth_token}`);

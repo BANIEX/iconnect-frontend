@@ -33,6 +33,8 @@ function ImageUpload() {
         headers: {
           "Content-Type": "multipart/form-data", 
       }});  
+
+      
       const imageUrl = uploadImageResponse.data.imageUrl;
       console.log(imageUrl);
       console.log(uploadImageResponse)

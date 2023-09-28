@@ -8,6 +8,7 @@ function ImageUpload() {
     // Other text inputs
   });
 
+  
   const [selectedImage, setSelectedImage] = useState(null);
 
   const handleInputChange = (event) => {

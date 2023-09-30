@@ -3,6 +3,7 @@
 // import axios from "axios";
 
 import "./App.css";
+import Facebook from "./components/Facebook/Facebook";
 // import ImageUpload from "./components/ImageUpload/ImageUpload";
 import Twitter from "./components/Twitter/Twitter";
 
@@ -33,6 +34,7 @@ function App() {
         </GoogleOAuthProvider> */}
         {/* <ImageUpload/> */}
         <Twitter/>
+        <Facebook/>
         
       </div>
     </>

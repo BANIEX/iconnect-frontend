@@ -12,7 +12,6 @@ const Facebook = () => {
   
 
   return (
-
     // <FacebookLogin
     //   appId="1336749817261894"
     //   onSuccess={(response) => {
@@ -35,7 +34,7 @@ const Facebook = () => {
     // />
 
     <FacebookLogin
-      appId="1336749817261894"
+      appId="1278028466239797"
       onSuccess={(response) => {
         console.log("Login Success!", response);
       }}

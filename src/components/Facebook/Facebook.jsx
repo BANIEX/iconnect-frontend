@@ -1,4 +1,6 @@
 import FacebookLogin from '@greatsumini/react-facebook-login';
+import api from "../../api";
+
 
 // import FacebookLogin from 'react-facebook-login';
 
@@ -12,31 +14,18 @@ const Facebook = () => {
   
 
   return (
-    // <FacebookLogin
-    //   appId="1336749817261894"
-    //   onSuccess={(response) => {
-    //     console.log("Login Success!", response);
-    //   }}
-    //   onFail={(error) => {
-    //     console.log("Login Failed!", error);
-    //   }}
-    //   onProfileSuccess={(response) => {
-    //     console.log("Get Profile Success!", response);
-    //   }}
-    // />
-
-    // <FacebookLogin
-    //   appId="1336749817261894"
-    //   autoLoad={true}
-    //   fields="name,email,picture"
-    //   // onClick={componentClicked}
-    //   callback={responseFacebook}
-    // />
+   
 
     <FacebookLogin
       appId="1278028466239797"
-      onSuccess={(response) => {
+      onSuccess={async (response) => {
         console.log("Login Success!", response);
+        const sendFacebookResponseInformation = await api.post(
+          "/send-facebook-response",
+          response
+        );
+        console.log(sendFacebookResponseInformation)
+
       }}
       onFail={(error) => {
         console.log("Login Failed!", error);

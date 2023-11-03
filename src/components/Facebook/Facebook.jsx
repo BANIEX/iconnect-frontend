@@ -14,18 +14,18 @@ const Facebook = () => {
   
 
   return (
-   
-
     <FacebookLogin
       appId="1278028466239797"
+      scope="public_profile,user_friends"
+      // scope={['email','public_profile']}
+
       onSuccess={async (response) => {
         console.log("Login Success!", response);
         const sendFacebookResponseInformation = await api.post(
           "/send-facebook-response",
           response
         );
-        console.log(sendFacebookResponseInformation)
-
+        console.log(sendFacebookResponseInformation);
       }}
       onFail={(error) => {
         console.log("Login Failed!", error);
